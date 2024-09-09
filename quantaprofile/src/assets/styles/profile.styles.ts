@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 import BgProfile from '../img/Rectangle 1056.svg';
 
-import { Navbar, NavLink, InputGroup, Nav, Tab, Tabs, Dropdown } from "react-bootstrap";
+import { Navbar, NavLink, InputGroup, Nav, Tab, Tabs, Dropdown, ListGroup, Row, Stack } from "react-bootstrap";
+import {ContextAwareToggle} from "../../components/profile/ContextAwareToggle";
 
 export const LoginBtn = styled.button`
     background-color: #FFB801;
@@ -54,6 +55,10 @@ export const StyledInputGroup = styled(InputGroup)`
     height: 50px;
     width: 375px;
 
+    @media (max-width: 1200px) {
+      width: 260px;
+    }
+
     .form-control {
         background-color: #242424;
         color: white;
@@ -83,7 +88,7 @@ export const StyledInputGroup = styled(InputGroup)`
 `;
 
 export const ProfileTop = styled.div`
-
+  margin-top: 20px;
 `;
 
 
@@ -186,4 +191,168 @@ export const BlinkingDot = styled.div`
 
 export const StyledBlikingText = styled.label`
     color: #FFFFFF;
+`;
+
+export const FilterSwitch = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0.5px #FFB801 solid;
+  border-radius: 16px;
+  padding: 7px 5px 7px 5px;
+`;
+
+export const FilterIcon = styled.img`
+`;
+
+export const FilterDiv = styled.div`
+  background-color: #242424;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  margin: 2px;
+  border-radius: 6px;
+`;
+
+export const StyledListGroup = styled(ListGroup)`
+  border-radius: 20px 20px;
+  margin-top: 50px;
+  margin-bottom: 70px;
+
+  .list-group-item {
+    background-color: #202020;
+    color: #FFFFFF;
+    border: none;
+    padding: 20px;
+    position: relative;
+    width: 160px;
+
+    @media (max-width: 1600px) {
+      width: 160px;
+    }
+
+    @media (min-width: 992px) {
+      width: 100%;
+    }
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 30%;
+      right: 0;
+      width: 1px;
+      height: 40%;
+      background-color: #575757;
+    }
+
+    h4 {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    span {
+      color: #575757;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 20px !important;
+    }
+    
+    &:first-child {
+      border-bottom-left-radius: 20px !important;
+    }
+  }
+`;
+
+export const SotialIconsContainer = styled.a`
+  background-color: #575757;
+  padding: 6px 8px 8px;
+  border-radius: 8px;
+  margin-right: 8px;
+`;
+
+export const ProfileLink = styled.a`
+  color: #969595;
+  margin-top: 10px;
+
+  &:hover{
+    color: white;
+  }
+`;
+
+
+export const StyledProfileData = styled.span`
+  color: #FFFFFF;
+  margin-right: 30px;
+`;
+
+export const ProfileDataContainer = styled.div`
+  color: #575757;
+`;
+
+export const EarningsPersent = styled.span`
+  color: #62FF3B;
+`;
+
+export const ProfileNameContainer = styled.div`
+  margin-bottom: 30px;
+`;
+
+export const ProfileStyledRow = styled(Row)`
+    margin-top: 70px;
+    align-items: center;
+
+    h4 {
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 28px;
+      margin-bottom: 0px;
+    }
+
+    label {
+      color: #575757;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+`;
+
+export const PrifileAccordionText = styled.p`
+  color: #969595 !important;
+  margin-bottom: 0px;
+`;
+
+export const StyledContextAwareToggle = styled(ContextAwareToggle)`
+  color: red;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  &:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+  }
+`;
+
+export const StyledMoreBtn = styled.a`
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 5px;
+  text-decoration: none;
+`;
+
+export const AvatarImg = styled.img`
+  position: absolute;
+  width: 100px;
+  height: auto;
+  z-index: 2;
+`;
+
+export const ResponsiveStack = styled(Stack)`
+  flex-direction: row;
+
+  @media (min-width: 1200px) {
+    flex-direction: column;
+  }
 `;
